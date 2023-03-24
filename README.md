@@ -3,7 +3,9 @@ Metal Detector designed and built as a project for a three-week course in Electr
 
 I mainly worked on the signal processing and programming of the microcontroller unit (ESP32). 
 The signal processing that was used was a simple DFT algorithm followed by a IIR filter 
-for the OLED display. 
+for the OLED display. By sampling with a frequency 4x higher than the sampled signal, the
+sine and cosine calculations in the DFT become very simple and can be easily realised with 
+a few lines of code (see make_dft function below).
 
 The program is written in C and uses a FreeRTOS Task notification system along with interrupts 
 to manage the various tasks. Sound toggle and calibration buttons guarded by GPIO interrupts. 
